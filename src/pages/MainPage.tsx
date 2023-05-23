@@ -22,7 +22,7 @@ function MainPage() {
       </div>
      </form>
      <section className={style.project_list}>
-      <ProjectMini/>
+      <ProjectMini />
       <ProjectMini/>
       <ProjectMini/>
       <ProjectMini/>

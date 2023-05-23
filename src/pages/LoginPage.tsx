@@ -3,9 +3,9 @@ import style from '../css/style.module.css';
 
  function LoginPage() {
   return (
-    <div className={style.login_block}>
+    <main className={style.login_block}>
         <div className={style.logo}>
-                <img className={style.logo_image} src="./img/logo.png"/>
+                <div className={style.logo_image}></div>
                 <h2 className={style.logo_text}>Welcome to the <br/> <span className={style.logo_text_sebbia}>SÉBBIA</span></h2>
         </div>
         <form className={style.login_form}>
@@ -13,9 +13,9 @@ import style from '../css/style.module.css';
                 <input className={style.login_input} placeholder="Логин"/>
                 <input className={style.login_input} type="password" placeholder="Пароль"/>
             </div>
-            <NavLink to='/mainPage'> <button className={style.login_button} type="submit">Войти</button></NavLink>
+            <NavLink to='/'> <button className={style.login_button} type="submit">Войти</button></NavLink>
         </form>
-    </div>
+    </main>
   );
 } 
 
