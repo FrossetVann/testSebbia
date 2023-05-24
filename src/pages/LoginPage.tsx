@@ -3,7 +3,7 @@ import style from '../css/style.module.css';
 
  function LoginPage() {
   return (
-    <main className={style.login_block}>
+    <div className={style.login_block}>
         <div className={style.logo}>
                 <div className={style.logo_image}></div>
                 <h2 className={style.logo_text}>Welcome to the <br/> <span className={style.logo_text_sebbia}>SÉBBIA</span></h2>
@@ -15,7 +15,7 @@ import style from '../css/style.module.css';
             </div>
             <NavLink to='/'> <button className={style.login_button} type="submit">Войти</button></NavLink>
         </form>
-    </main>
+    </div>
   );
 } 
 

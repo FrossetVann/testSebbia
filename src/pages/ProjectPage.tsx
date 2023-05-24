@@ -2,11 +2,54 @@
 import classNames from 'classnames';
 import style from '../css/style.module.css';
 import Menu from '../components/Menu';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
+import Modal from '../components/Modal';
+import Member from '../components/Member';
 
 function ProjectPage() {
+    const [showMembersModal, setShowMembersModal] = useState(false);
+
+    const handleMembersClick = () => {
+      setShowMembersModal(true);
+    };
+
+    const handleCloseModal = () => {
+      setShowMembersModal(false);
+
+    };
+
+    
   return (
     <>
-  <main className={style.project_main}>
+    {showMembersModal && (
+  <Modal
+    title="Список участников"
+    onClose={() => setShowMembersModal(false)}>
+            <div className={style.model_exit_block}>
+            <Member/>
+            <Member/>
+            <Member/>
+            <Member/>
+            <Member/>
+            <Member/>
+            <div
+                className={classNames(style.modal_option, style.modal_option_no)}
+                onClick={handleCloseModal}
+              >
+                Закрыть
+              </div>
+          </div>
+
+  </Modal>
+  )}
+  <Menu>
+    <NavLink to='/' className={classNames(style.option, style.back)}><div className={classNames(style.options_icon, style.back_icon)}></div><span className={style.option_name}>Вернуться</span></NavLink>
+    <div onClick={handleMembersClick} className={classNames(style.option, style.create)}><div className={classNames(style.options_icon, style.view_members_icon)}></div><span className={style.option_name}>Участники</span></div>
+    <a className={classNames(style.option, style.create)}><div className={classNames(style.options_icon, style.create_task_icon)}></div><span className={style.option_name}>Задача</span></a>
+    <a className={classNames(style.option, style.create)}><div className={classNames(style.options_icon, style.delete_project_icon)}></div><span className={style.option_name}>Удалить</span></a>
+  </Menu>
+  <main>
     <div className={style.project_title_block}>
       <h2 className={style.project_title}>React приложение</h2>
     </div>
